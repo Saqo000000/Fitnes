@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Fitness.BL.Model
 {
-    class User
+    [Serializable]
+    public class User
     {
-
         public string Name { get; }
         public Gender Gender { get; }
         public DateTime BirthDate { get; }

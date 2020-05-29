@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "kwZ/uXfb/DextSQDnpz0+okcD5clLV2K5+TawODAwK+57ARNT166EaZLTNTLthsYZM5H1fRwWPZQ1baNBgk1Rg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\saqox\\source\\repos\\Fitness\\Fitness.BL\\Fitness.BL.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\saqox\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\saqox\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
