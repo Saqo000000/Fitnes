@@ -1,0 +1,7 @@
+C:\Users\saqox\source\repos\Fitness\.vs\Fitness\v16\lut\0\b\Fitness.BL\Debug\netstandard2.0\Fitness.BL.deps.json
+C:\Users\saqox\source\repos\Fitness\.vs\Fitness\v16\lut\0\b\Fitness.BL\Debug\netstandard2.0\Fitness.BL.dll
+C:\Users\saqox\source\repos\Fitness\.vs\Fitness\v16\lut\0\i\Fitness.BL\Debug\netstandard2.0\Fitness.BL.AssemblyInfoInputs.cache
+C:\Users\saqox\source\repos\Fitness\.vs\Fitness\v16\lut\0\i\Fitness.BL\Debug\netstandard2.0\Fitness.BL.AssemblyInfo.cs
+C:\Users\saqox\source\repos\Fitness\.vs\Fitness\v16\lut\0\i\Fitness.BL\Debug\netstandard2.0\Fitness.BL.csproj.CopyComplete
+C:\Users\saqox\source\repos\Fitness\.vs\Fitness\v16\lut\0\i\Fitness.BL\Debug\netstandard2.0\Fitness.BL.dll
+C:\Users\saqox\source\repos\Fitness\.vs\Fitness\v16\lut\0\i\Fitness.BL\Debug\netstandard2.0\Fitness.BL.csproj.CoreCompileInputs.cache

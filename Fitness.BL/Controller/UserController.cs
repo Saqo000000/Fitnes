@@ -35,12 +35,12 @@ namespace Fitness.BL.Controller
         /// get save users list
         /// </summary>
         /// <returns></returns>
-        public List<User> GetUsersData()
+        private List<User> GetUsersData()
         {
             BinaryFormatter formatter = new BinaryFormatter();
             using (FileStream fs = new FileStream("users.dat", FileMode.OpenOrCreate))
             {
-                if (formatter.Deserialize(fs) is List<User> users)
+                if (fs.Length>0 && formatter.Deserialize(fs) is List<User> users)
                 {
                     return users;
                 }
@@ -60,7 +60,7 @@ namespace Fitness.BL.Controller
         /// <summary>
         /// Save users data
         /// </summary>
-        private void Save()
+        public void Save()
         {
             BinaryFormatter formatter = new BinaryFormatter();
             using (FileStream fs = new FileStream("users.dat", FileMode.OpenOrCreate))

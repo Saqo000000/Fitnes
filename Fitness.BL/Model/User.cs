@@ -10,20 +10,22 @@ namespace Fitness.BL.Model
         public string Name { get; }
         public Gender Gender { get; set; }
         public DateTime BirthDate { get; set; }
-        private double weight;
-        public double Weight
-        {   
-            get => weight; 
-            set
-            {   if (value <= 30) throw new ArgumentException("Weight can't be less than 20kg ", nameof(value)); }
-        }
-        private double height;
-        public double Height 
-        { 
-            get=>height; 
-            set
-            { if (value <= 30 || value >= 250) throw new ArgumentException("Height can't be less than 30sm and more than 250sm", nameof(value)); }
-        }
+        public double Weight { get; set; }
+        public double Height { get; set; }
+        //private double weight;
+        //public double Weight1
+        //{   
+        //    get => weight; 
+        //    set
+        //    {   if (value <= 30) throw new ArgumentException("Weight can't be less than 20kg ", nameof(value)); }
+        //}
+        //private double height;
+        //public double Height 1
+        //{ 
+        //    get=>height; 
+        //    set
+        //    { if (value <= 30 || value >= 250) throw new ArgumentException("Height can't be less than 30sm and more than 250sm", nameof(value)); }
+        //}
         
         /// <summary>
         /// set currect age for user

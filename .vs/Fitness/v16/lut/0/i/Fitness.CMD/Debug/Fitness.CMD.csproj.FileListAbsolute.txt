@@ -1,0 +1,6 @@
+C:\Users\saqox\source\repos\Fitness\.vs\Fitness\v16\lut\0\b\Fitness.CMD\bin\Debug\Fitness.CMD.exe.config
+C:\Users\saqox\source\repos\Fitness\.vs\Fitness\v16\lut\0\b\Fitness.CMD\bin\Debug\Fitness.CMD.exe
+C:\Users\saqox\source\repos\Fitness\.vs\Fitness\v16\lut\0\i\Fitness.CMD\Debug\Fitness.CMD.csprojAssemblyReference.cache
+C:\Users\saqox\source\repos\Fitness\.vs\Fitness\v16\lut\0\i\Fitness.CMD\Debug\Fitness.CMD.csproj.CoreCompileInputs.cache
+C:\Users\saqox\source\repos\Fitness\.vs\Fitness\v16\lut\0\i\Fitness.CMD\Debug\Fitness.CMD.csproj.CopyComplete
+C:\Users\saqox\source\repos\Fitness\.vs\Fitness\v16\lut\0\i\Fitness.CMD\Debug\Fitness.CMD.exe
