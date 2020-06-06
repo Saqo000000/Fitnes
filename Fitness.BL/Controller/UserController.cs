@@ -8,11 +8,13 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Fitness.BL.Controller
 {
-    public class UserController
+    public class UserController:ControllerBase
     {
         public List<User> Users { get; }
         public User CurrentUser { get; }
         public bool IsNewUser { get; } = false;
+        private const string Users_File_Name = "users.dat";
+
 
         public UserController(string userName)
         {
@@ -37,15 +39,7 @@ namespace Fitness.BL.Controller
         /// <returns></returns>
         private List<User> GetUsersData()
         {
-            BinaryFormatter formatter = new BinaryFormatter();
-            using (FileStream fs = new FileStream("users.dat", FileMode.OpenOrCreate))
-            {
-                if (fs.Length>0 && formatter.Deserialize(fs) is List<User> users)
-                {
-                    return users;
-                }
-                else { return new List<User>(); }
-            }
+            return Load<List<User>>(Users_File_Name) ?? new List<User>();
         }
 
         public void SetNewUserData(string genderName, DateTime birthdate,double height=1,double weight=1)
@@ -62,11 +56,7 @@ namespace Fitness.BL.Controller
         /// </summary>
         public void Save()
         {
-            BinaryFormatter formatter = new BinaryFormatter();
-            using (FileStream fs = new FileStream("users.dat", FileMode.OpenOrCreate))
-            {
-                formatter.Serialize(fs, Users);
-            }
+            Save(Users_File_Name, Users);
         }
        
     }

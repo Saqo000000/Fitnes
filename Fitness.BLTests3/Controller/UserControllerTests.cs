@@ -29,12 +29,12 @@ namespace Fitness.BL.Controller.Tests
             //Act
             UserController userController = new UserController(username);
             userController.SetNewUserData(gender, birthdate, height, weight);
-            var e = userController;
+            //var e = userController;
             UserController userController2 = new UserController(username);
 
             //Assert
             Assert.AreEqual(username, userController2.CurrentUser.Name);
-            var t=userController2.CurrentUser.Weight;
+           // var t=userController2.CurrentUser.Weight;
             Assert.AreEqual(weight, userController2.CurrentUser.Weight);
             Assert.AreEqual(height, userController2.CurrentUser.Height);
             Assert.AreEqual(gender, userController2.CurrentUser.Gender.Name);
