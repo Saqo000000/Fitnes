@@ -11,8 +11,8 @@ namespace Fitness.BL.Controller
     public class EatingController:ControllerBase
     {
         private User user;
-        private const string Foods_File_Name = "foods.date";
-        private const string Eatings_File_Name = "eatings.date";
+        private const string Foods_File_Name = "foods.dat";
+        private const string Eatings_File_Name = "eatings.dat";
         public List<Food> Foods { get; }
         public Eating Eating { get; }
         public EatingController(User user)

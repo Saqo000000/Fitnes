@@ -32,28 +32,60 @@ namespace Fitness.CMD
                 Console.WriteLine("Enter user gender ");
                 string gender = Console.ReadLine();
                 double weight, height;
-                DateTime birthdate = ParseDateTime();
+                DateTime birthdate = ParseDateTime("user birthdate");
 
                 weight = ParseDouble("weight");
                 height = ParseDouble("height");
                 userController.SetNewUserData(gender, birthdate, height, weight);
             }
             Console.WriteLine(userController.CurrentUser);
-            Console.WriteLine("What do you want to do");
-            Console.WriteLine("E-enter eathing");
-            ConsoleKeyInfo key = Console.ReadKey();
             EatingController eatingController = new EatingController(userController.CurrentUser);
-            if (key.Key==ConsoleKey.E)
+            ExerciseController exerciseController = new ExerciseController(userController.CurrentUser);
+            while (true)
             {
-               var food= EnterEating();
-                eatingController.Add(food.Food,food.Weight);
-                Console.WriteLine();
-                foreach (var item in eatingController.Eating.Foods)
+                Console.WriteLine("What do you want to do");
+                Console.WriteLine("E-enter eathing");
+                Console.WriteLine("A-enter exercise");
+                Console.WriteLine("Q-enter exit");
+                ConsoleKeyInfo key = Console.ReadKey();
+                switch (key.Key)
                 {
-                    Console.WriteLine($"\t{item.Key} ---- {item.Value}");
-                    Console.WriteLine();
-                }
+                    case ConsoleKey.E:
+                        var food = EnterEating();
+                        eatingController.Add(food.Food, food.Weight);
+                        Console.WriteLine();
+                        foreach (var item in eatingController.Eating.Foods)
+                        {
+                            Console.WriteLine($"\t{item.Key} ---- {item.Value}");
+                            Console.WriteLine();
+                        }
+                        break;
+                    case ConsoleKey.A:
+                        var exe = EnterExercise();
+                        exerciseController.Add(exe.activity, exe.begin, exe.finish);
+                        foreach(Exercise item in exerciseController.Exercises)
+                        {
+                            Console.WriteLine(item.Activity+"\t"+ 
+                                item.Start.ToShortTimeString() + "\t"+ 
+                                item.Finish.ToShortTimeString() );
+                        }
+                        break;
+                    case ConsoleKey.Q:
+                        Environment.Exit(0);
+                        break;
+                } 
             }
+        }
+
+        private static (DateTime begin, DateTime finish,Activity activity) EnterExercise()
+        {
+            Console.Write("Enter exercise name:");
+            string name = Console.ReadLine();
+            double energy = ParseDouble("Rasxod energy v minutu");
+            DateTime begin = ParseDateTime("Start time exercise");
+            DateTime end = ParseDateTime("Finish time exercise");
+            Activity activity = new Activity(name, energy);
+            return (begin, end, activity);
         }
 
         private static (Food Food, double Weight) EnterEating()
@@ -74,16 +106,16 @@ namespace Fitness.CMD
 
 
 
-        private static DateTime ParseDateTime()
+        private static DateTime ParseDateTime(string value)
         {
-            Console.WriteLine("Enter user birthdate dd.mm.yyyy ");
+            Console.WriteLine($"Enter {value} dd.mm.yyyy ");
             while (true)
             {
                 if (DateTime.TryParse(Console.ReadLine(), out DateTime birthdate))
                 {
                     return birthdate;
                 }
-                else { Console.WriteLine("Incorrect format birthdate"); }
+                else { Console.WriteLine($"Incorrect format {value}"); }
             }
         }
 
@@ -91,7 +123,7 @@ namespace Fitness.CMD
         {
             while (true)
             {
-                Console.Write($"Enter  {name}");
+                Console.Write($"Enter  {name} ");
                 if (double.TryParse(Console.ReadLine(), out double value))
                 {
                     return value;
