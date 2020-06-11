@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Fitness.BL;
 using Fitness.BL.Controller;
 using Fitness.BL.Model;
+using System.Globalization;
+using System.Resources;
 
 namespace Fitness.CMD
 {
@@ -13,10 +15,16 @@ namespace Fitness.CMD
     {
         static void Main(string[] args)
         {
+            // Console.ReadLine();
+            CultureInfo culture = CultureInfo.CreateSpecificCulture("ddn-us");
+            ResourceManager resourceManager = new ResourceManager("Fitness.CMD.Languages.Messages",typeof(Program).Assembly);
+            Console.WriteLine(resourceManager.GetString("Hello",culture));
+            Console.WriteLine(resourceManager.GetString("EnterName", culture));
 
-            Console.ReadLine();
-            Console.WriteLine("Hellow from fitnes club'");
-            Console.WriteLine("Enter user name ");
+            /*
+            Console.WriteLine(Languages.Messages.Hello);
+            Console.WriteLine(Languages.Messages.EnterName);//get strings from resourses file
+            */
             string name = Console.ReadLine();
             UserController userController = new UserController(name);
             if (userController.IsNewUser)
